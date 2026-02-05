@@ -17,3 +17,4 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const storage = getStorage(app);
+console.log("ENV_BUCKET:", import.meta.env.VITE_FIREBASE_STORAGE_BUCKET);
