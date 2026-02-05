@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
-import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -17,5 +17,5 @@ const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 
-// ✅ 버킷을 강제 지정해서 default-bucket 문제를 원천 차단
+// ✅ default bucket 에러 원천 차단 (강제 버킷 지정)
 export const storage = getStorage(app, `gs://${firebaseConfig.storageBucket}`);
